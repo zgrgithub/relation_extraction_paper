@@ -1,0 +1,6 @@
+Neural Relation Extraction with Selective Attention over Instances  <2016>  
+code:https://github.com/thunlp/NRE
+
+1.Abstract
+A sentence-level attention-based model 
+solve ploblem: distant supervision inevitably accompanies with the wrong labelling problem
