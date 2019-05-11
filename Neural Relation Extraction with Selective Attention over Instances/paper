@@ -2,6 +2,50 @@ Neural Relation Extraction with Selective Attention over Instances  <2016>
 
 code:https://github.com/thunlp/NRE
 
-1.Abstract
+1.Introdution
 A sentence-level attention-based model 
-solve ploblem: distant supervision inevitably accompanies with the wrong labelling problem
+
+solve ploblem: 
+distant supervision inevitably accompanies with the wrong labelling problem
+
+advantage:
+can utilize all informative sentences. 
+
+how to do:
+1.1 to use CNN to embed the semantics of sentences and represent the relation as semantic composition of sentence embeddings.
+(figure 1 in paper)
+
+1.2 to build sentence-level attention over multiple instances and extract relation with the relation vector weighted by 
+sentence-level attention
+(it can solve the wrong labelling problem)
+
+
+2.Methodology
+
+2.1 Sentence Encoder.
+Given a sentence x and two target entities, a convolutional neutral network (CNN) is used to construct a distributed representation x 
+of the sentence
+
+ﬁrst transform words into lowdimensional vectors via CNN. (each input word is transformed into a vector via word embedding matrix and 
+use position embeddings for all words in the sentence. )
+
+2.2 Selective Attention over Instances. 
+use sentence-level attention to select the sentences which really express the corresponding relation 
+
+
+
+3. ExperimentalSettings
+
+WordEmbeddings:
+word2vec(https://code.google.com/p/word2vec/)
+
+ParameterSettings:
+Window size l 3 
+Sentence embedding size dc 230 
+Word dimension da 50 
+Position dimension db 5 
+Batch size B 160 
+Learning rate λ 0.01 
+Dropout probability p 0.5
+
+
